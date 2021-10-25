@@ -1,0 +1,20 @@
+- 
+  name: menu_test
+  account:
+    mail: yan_yue@founder.co.jp
+    password: "123456"
+    publisherId: 1
+  request:
+    method: get
+    headers: $getConfigData(ediGo-AppKey)$
+    baseUrl: $getConfigData(baseUrl)$
+    accessToken: $getConfigData(accessToken)$
+    roleId: $getConfigData(roleId)$
+    router : /common/getMenu
+  params: 
+
+  validate:
+    equals: 
+      code: 1
+    contains: 
+

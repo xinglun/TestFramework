@@ -1,3 +1,20 @@
+-  
+  name: login_test
+  request:
+    method: post
+    headers: $getConfigData(ediGo-AppKey)$
+    baseUrl: $getConfigData(baseUrl)$
+    # accessToken: $getConfigData(access_token)$
+    router : /login
+  params: 
+    mail: yan_yue@founder.co.jp
+    password: "123456"
+    publisherId: 1
+  validate:
+    equals: 
+      code: 1
+    contains: 
+      - access_token
 - 
   name: login_test_publisherId
   request:

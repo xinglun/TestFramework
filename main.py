@@ -5,10 +5,11 @@ import shutil
 
 
 PATH = os.path.split(os.path.realpath(__file__))[0]
-failureException = AssertionError
 if __name__ == '__main__':
-    # shutil.rmtree('.\logs')
-    # os.mkdir('.\logs')
+    shutil.rmtree('.\\logs')
+    os.mkdir('.\\logs')
+    shutil.copy('.\\venv\\environment.properties','.\\logs')
+    shutil.copy('.\\venv\\config.yml','.\\logs')
     LogConfig(PATH)
     pytest.main()
     os.system('allure generate logs -o reports --clean')

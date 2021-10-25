@@ -1,8 +1,8 @@
-# Rule
+# TestCases Rule
 
-## 1）必须有四个一级关键字；name,request,params,validate
+## 1）有四个一级关键字；name,request,params,validate和可选account
 
-## 2）在request关键字下必须包括两个二级关键字；method，headers,baseUrl,router和一个可选关键字accessToken
+## 2）在request关键字下包括二级关键字；method，headers,baseUrl,router和多个可选关键字
 
 ## 3）传参方式
 
