@@ -1,0 +1,61 @@
+- 
+  name: login_test_publisherId
+  request:
+    method: post
+    headers: $getConfigData(ediGo-AppKey)$
+    baseUrl: $getConfigData(baseUrl)$
+    # accessToken: $getConfigData(access_token)$
+    router : /login
+  params: 
+    mail: yan_yue@founder.co.jp
+    password: "123456"
+  validate:
+    equals: 
+      code: 3
+    contains: 
+- 
+  name: login_test_password
+  request:
+    method: post
+    headers: $getConfigData(ediGo-AppKey)$
+    baseUrl: $getConfigData(baseUrl)$
+    # accessToken: $getConfigData(access_token)$
+    router : /login
+  params: 
+    mail: yan_yue@founder.co.jp
+    publisherId: 1
+  validate:
+    equals: 
+      code: 3
+    contains:
+- 
+  name: login_test_mail
+  request:
+    method: post
+    headers: $getConfigData(ediGo-AppKey)$
+    baseUrl: $getConfigData(baseUrl)$
+    # accessToken: $getConfigData(access_token)$
+    router : /login
+  params: 
+    password: "123456"
+    publisherId: 1
+  validate:
+    equals: 
+      code: 3
+    contains:
+- 
+  name: login_test_invalid_account
+  request:
+    method: post
+    headers: $getConfigData(ediGo-AppKey)$
+    baseUrl: $getConfigData(baseUrl)$
+    # accessToken: $getConfigData(access_token)$
+    router : /login
+  params: 
+    publisherId: 789
+    mail: "GtestNo@purvar.co.jp"
+    password: "123456"
+  validate:
+    equals: 
+      code: 4
+    contains:
