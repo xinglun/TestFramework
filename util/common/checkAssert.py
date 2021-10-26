@@ -7,7 +7,7 @@ def check_assert(data,validate):
     # equals
     for key,value in validate["equals"].items():
         print("equals:",key,value)
-        if data["data"] != None:
+        if data["data"] != None and type(data["data"]) is dict:
             if data.get(key) != value and data["data"].get(key) != value:
                 equals = False
         else:
@@ -17,7 +17,7 @@ def check_assert(data,validate):
     if validate["contains"] != None:
         for i in validate["contains"]:
             print("contains:",i)
-            if data["data"] != None:
+            if data["data"] != None and type(data["data"]) is dict:
                 if i not in data and i not in data["data"]:
                     contains = False
             else:
@@ -34,7 +34,7 @@ def check_assert(data,validate):
             allure.attach("contains assert", "FAILED")
         else:
             allure.attach("assert", "PASSED")
-    return equals or contains 
+    return equals and contains 
     
 
 

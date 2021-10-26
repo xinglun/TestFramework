@@ -1,3 +1,4 @@
+import logging
 import os
 import yaml
 
@@ -15,7 +16,8 @@ class YamlUtil:
         with open(os.getcwd() + "\\venv\\config.yml",mode="r",encoding="utf-8") as f:
             value = yaml.load(stream=f,Loader=yaml.FullLoader)
             if value.get(key) == None:
-                raise Exception("Invalid key", key)
+                    logging.debug("invalid key：  %s" % str(key))
+                    logging.info("invalid key：  %s" % str(key))
             return {key: value.get(key)}
 
     # read config_yaml_value
@@ -23,7 +25,8 @@ class YamlUtil:
         with open(os.getcwd() + "\\venv\\config.yml",mode="r",encoding="utf-8") as f:
             value = yaml.load(stream=f,Loader=yaml.FullLoader)
             if value.get(key) == None:
-                raise Exception("Invalid key", key)
+                    logging.debug("invalid key：  %s" % str(key))
+                    logging.info("invalid key：  %s" % str(key))
             return value.get(key)
  
     # write config.yml

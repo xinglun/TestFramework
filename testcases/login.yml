@@ -1,5 +1,7 @@
 -  
-  name: login_test
+  name: login_test_success
+  account:
+  
   request:
     method: post
     headers: $getConfigData(ediGo-AppKey)$
@@ -17,6 +19,8 @@
       - access_token
 - 
   name: login_test_publisherId
+  account:
+
   request:
     method: post
     headers: $getConfigData(ediGo-AppKey)$
@@ -32,6 +36,8 @@
     contains: 
 - 
   name: login_test_password
+  account:
+  
   request:
     method: post
     headers: $getConfigData(ediGo-AppKey)$
@@ -47,6 +53,8 @@
     contains:
 - 
   name: login_test_mail
+  account:
+  
   request:
     method: post
     headers: $getConfigData(ediGo-AppKey)$
@@ -62,6 +70,8 @@
     contains:
 - 
   name: login_test_invalid_account
+  account:
+  
   request:
     method: post
     headers: $getConfigData(ediGo-AppKey)$

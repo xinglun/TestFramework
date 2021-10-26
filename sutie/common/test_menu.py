@@ -14,7 +14,6 @@ class TestMenu:
     # @pytest.mark.smoke
     @pytest.mark.parametrize("testcases",YamlUtil().read_testcases_yaml("menu.yml"))
     def test_menu(self,testcases): 
-        account_rep = login(testcases['account'])
         # send post
         _,check = send_request(testcases)
         assert check == True

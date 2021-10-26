@@ -1,5 +1,7 @@
 - 
   name: login_test
+  account:
+  
   request:
     method: post
     headers: $getConfigData(ediGo-AppKey)$
