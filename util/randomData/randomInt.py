@@ -7,7 +7,7 @@ def random_int(scope):
         start_num = int(start_num)
         end_num = int(end_num)
     except ValueError:
-        raise Exception("调用随机整数失败，范围参数有误！\n %s" % str(scope))
+        raise Exception("range err！\n %s" % str(scope))
     if start_num <= end_num:
         num = random.randint(start_num, end_num)
     else:

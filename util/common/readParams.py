@@ -4,13 +4,14 @@ from util.randomData import choiceData,getTime,randomInt,randomFloat,randomStrin
 
 
 def read_param(value):
+    # re
     int_list = re.findall('\\$randomInt\\(([0-9]*,[0-9]*?)\\)\\$', value)
     string_list = re.findall('\\$randomString\\(([0-9]*?)\\)\\$', value)
     float_list = re.findall("\\$randomFloat\\(([0-9]*,[0-9]*,[0-9]*)\\)\\$", value)
     time_list = re.findall("\\$getTime\\(time_type=(.*?),layout=(.*?),unit=([0-9],[0-9],[0-9],[0-9],[0-9])\\)\\$", value)
     choice_list = re.findall("\\$choiceData\\(((?!\\$Choice\\().*?)\\)\\$", value)
     config_list = re.findall("\\$getConfigData\\((.*?)\\)\\$", value)
-
+    # init var
     if len(int_list):
         for i in int_list:
             pattern = re.compile('\\$randomInt\\(' + i + '\\)\\$')  

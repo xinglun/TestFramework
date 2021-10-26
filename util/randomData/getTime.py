@@ -10,19 +10,19 @@ def get_time(time_type, layout, unit="0,0,0,0,0"):
             tim = tim + datetime.timedelta(seconds=int(lag[0]), minutes=int(lag[1]),
                                            hours=int(lag[2]), days=int(lag[3]), weeks=int(lag[4]))
         except ValueError:
-            raise Exception("获取时间错误，时间单位%s" % unit)
-    # 获取10位时间戳
+            raise Exception("time err type:%s" % unit)
+    # get 10 time stamp 
     if layout == "10timestamp":
         tim = tim.strftime('%Y-%m-%d %H:%M:%S')
         tim = int(time.mktime(time.strptime(tim, "%Y-%m-%d %H:%M:%S")))
         return tim
-    # 获取13位时间戳
+    # get 13 time stamp 
     elif layout == "13timestamp":
         tim = tim.strftime('%Y-%m-%d %H:%M:%S')
         tim = int(time.mktime(time.strptime(tim, "%Y-%m-%d %H:%M:%S")))
         tim = int(round(tim * 1000))
         return tim
-    # 按传入格式获取时间
+    # format time
     else:
         tim = tim.strftime(layout)
         return tim

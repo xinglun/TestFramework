@@ -2,7 +2,9 @@ from util.common import readParams
 
 # fix headers
 def read_headers(data):
+    # base headers
     headers = readParams.read_param(data['request']['headers'])
+    # option headers
     if data['request'].get("accessToken") != None:
         accessToken = readParams.read_param(data['request']['accessToken'])
         headers = {**headers,**{'Authorization':accessToken['accessToken']}}

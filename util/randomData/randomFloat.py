@@ -9,7 +9,7 @@ def random_float(data):
         end_num = int(end_num)
         accuracy = int(accuracy)
     except ValueError:
-        raise Exception("调用随机整数失败，范围参数或精度有误！\n小数范围精度 %s" % data)
+        raise Exception("range or acc err！\n acc %s" % data)
     if start_num <= end_num:
         num = random.uniform(start_num, end_num)
     else:
