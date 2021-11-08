@@ -19,7 +19,7 @@ class TestLogin:
     # @pytest.mark.smoke
     @pytest.mark.parametrize("testcases",YamlUtil().read_testcases_yaml("login.yml"))
     def test_login(self,testcases):
-        # send post
+        # send post and check results
         rep,check = send_request(testcases)
         assert check == True
         
